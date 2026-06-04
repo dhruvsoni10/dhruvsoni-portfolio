@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO & META TAGS (Next 5-Year AI Era) ================= -->
+    <title>Dhruv Soni | Cloud & AIOps Engineer | AI-Ready Infrastructure</title>
+    <meta name="description" content="Immersive 3D Portfolio of Dhruv Soni, Cloud & System Engineer. Pioneering AI-Ready Infrastructure, AIOps, Azure Automation (AZ-104, AI-900), and Zero-Trust Architectures.">
+    <meta name="keywords" content="Dhruv Soni, AIOps Engineer, AI-Ready Cloud Infrastructure, Associate Cloud Engineer, Azure Administrator, AI-900, AZ-104, Oracle Cloud, AWS DevOps, Generative AI Workflows, Prompt Engineering, Cloud Automation, Zero-Trust Security, Ahmedabad">
+    <meta name="author" content="Dhruv Soni">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / LinkedIn Preview -->
+    <meta property="og:title" content="Dhruv Soni - Cloud & AIOps Engineer">
+    <meta property="og:description" content="Architecting the next generation of AI-driven cloud environments. Azure (AZ-104, AI-900), Multi-Cloud, and Prompt Engineering specialist.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.linkedin.com/in/dhruv-soni-035ba51b4?"> 
+    
+    <!-- Future-Proof JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dhruv Soni",
+      "jobTitle": "Associate Cloud & System Engineer",
+      "worksFor": { "@type": "Organization", "name": "MindQuad Solutions" },
+      "url": "https://www.linkedin.com/in/dhruv-soni-035ba51b4?",
+      "address": {
+        "@type": "PostalAddress", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "India"
+      },
+      "email": "connectwithdhruvsoni@gmail.com",
+      "telephone": "+91-7041975181",
+      "sameAs": [ "https://www.linkedin.com/in/dhruv-soni-035ba51b4?" ],
+      "knowsAbout": ["AIOps", "Microsoft Azure", "AZ-104", "AZ-900", "AI-900", "Cloud-Native Infrastructure", "PowerShell Automation", "Generative AI", "Prompt Engineering", "Zero-Trust Architecture", "Oracle Cloud", "AWS DevOps"]
+    }
+    </script>
+
+    <!-- ================= EXTERNAL LIBRARIES ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&family=Righteous&display=swap');
+        
+        /* ================= DYNAMIC QUARTERLY THEME SYSTEM ================= */
+        :root {
+            --c-primary: #0078D4; 
+            --c-accent: #FFDE21;
+            --c-bg: #030508;
+            --card-radius: 24px;
+            --font-display: 'Space Grotesk', sans-serif;
+            --fog-primary: #0078D440;
+            --fog-accent: #FFDE2140;
+        }
+
+        body {
+            margin: 0; overflow-x: hidden;
+            background-color: var(--c-bg);
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            transition: background-color 1s ease;
+        }
+
+        h1, h2, h3, .brand-font { font-family: var(--font-display); }
+        .logo-font { font-family: 'Righteous', cursive; }
+
+        /* ================= 3D BACKGROUNDS & LAYERS ================= */
+        #bg-canvas-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; }
+        
+        /* Floating Glowing Orbs */
+        .orb { position: fixed; border-radius: 50%; filter: blur(90px); z-index: -2; opacity: 0.5; animation: float 12s infinite ease-in-out alternate; pointer-events: none; }
+        .orb-1 { top: 10%; left: 10%; width: 350px; height: 350px; background: var(--fog-primary); animation-delay: 0s; }
+        .orb-2 { bottom: 10%; right: 10%; width: 450px; height: 450px; background: var(--fog-accent); animation-delay: -5s; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(40px, 60px) scale(1.1); } }
+
+        /* ================= CINEMATIC FOG ENGINE ================= */
+        .fog-container { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1; overflow: hidden; }
+        .fog-cloud { position: absolute; filter: blur(90px); border-radius: 50%; mix-blend-mode: screen; transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1); animation: fog-drift 15s infinite ease-in-out alternate; }
+        .fog-top { top: -20%; left: -10%; width: 120%; height: 50%; background: radial-gradient(ellipse, var(--fog-primary) 0%, transparent 65%); transform: translateY(-30px); }
+        .fog-bottom { bottom: -20%; left: -10%; width: 120%; height: 50%; background: radial-gradient(ellipse, rgba(255,255,255,0.15) 0%, transparent 65%); transform: translateY(30px); animation-delay: -3s; }
+        .fog-left { top: -10%; left: -20%; width: 50%; height: 120%; background: radial-gradient(ellipse, var(--fog-accent) 0%, transparent 65%); transform: translateX(-30px); animation-delay: -7s; }
+        .fog-right { top: -10%; right: -20%; width: 50%; height: 120%; background: radial-gradient(ellipse, var(--fog-primary) 0%, transparent 65%); transform: translateX(30px); animation-delay: -10s; }
+        @keyframes fog-drift { 0% { opacity: 0.15; transform: scale(1) translate(0, 0); } 100% { opacity: 0.4; transform: scale(1.05) translate(15px, 15px); } }
+        .fog-cloud.scrolling { opacity: 0.7 !important; transform: scale(1.25) translate(0, 0) !important; }
+
+        /* ================= DYNAMIC GLASSMORPHISM CARDS ================= */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(15, 23, 42, 0.5) 0%, rgba(5, 8, 15, 0.7) 100%);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+            transform-style: preserve-3d;
+            border-radius: var(--card-radius);
+            position: relative; z-index: 10;
+            transition: border-radius 0.5s ease, border-color 0.3s ease;
+        }
+        
+        .glass-card:hover { border-top-color: var(--c-accent); }
+        .inner-3d { transform: translateZ(40px); transition: transform 0.3s ease; }
+        .glass-nav { background: rgba(3, 5, 8, 0.65); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); z-index: 50; }
+
+        /* Dynamic Gradients & Colors */
+        .text-gradient { background: linear-gradient(135deg, var(--c-accent) 0%, #FFFFFF 50%, var(--c-primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-accent { color: var(--c-accent); }
+        .border-primary { border-color: var(--c-primary); }
+        .bg-primary { background-color: var(--c-primary); }
+
+        /* Scroll Reveal */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; z-index: 10; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 150ms; }
+        
+        #hero-3d-container { width: 100%; height: 420px; position: relative; cursor: grab; z-index: 10; }
+        #hero-3d-container:active { cursor: grabbing; }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--c-bg); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--c-accent); }
+        
+        /* Mobile menu fixes */
+        #mobile-menu { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.3s ease; }
+        #mobile-menu.open { max-height: 400px; opacity: 1; padding-bottom: 1rem; }
+    </style>
+
+    <!-- INITIALIZE THEME ENGINE IMMEDIATELY -->
+    <script>
+        const themes = {
+            Q1: { 
+                primary: '#00F3FF', accent: '#FF00FF', bg: '#05010a', radius: '0px', pAlpha: '#00F3FF40', aAlpha: '#FF00FF40', font: "'Inter', sans-serif",
+                seoTitle: "Dhruv Soni | Azure Administrator & Cloud Security",
+                seoDesc: "Portfolio of Dhruv Soni, Cloud Associate Engineer. Specialized in Azure (AZ-104), RBAC security, Office 365 management, and network troubleshooting.",
+                seoKeys: "Dhruv Soni, Azure Administrator, AZ-104, Cloud Security, RBAC Implementation, Office 365 Management, Cloud Governance, Technical Support, Ahmedabad",
+                heroLabel: "Securing Cloud Infrastructure",
+                heroTitle: "Securing the <br><span class=\"text-gradient\">Cloud.</span>",
+                heroSub: "I am Dhruv Soni, a Cloud Associate Engineer. I specialize in <strong class=\"text-white\">Azure Administration (AZ-104)</strong>, enforcing RBAC, managing O365 environments, and troubleshooting complex network issues.",
+                skillTitle: "<i class=\"fa-solid fa-shield-halved text-accent mr-3\"></i> Security & Administration",
+                dynSkills: ["<i class=\"fa-solid fa-lock text-accent mr-2\"></i> RBAC & Security", "<i class=\"fa-brands fa-windows text-accent mr-2\"></i> Office 365 Admin", "<i class=\"fa-solid fa-shield text-accent mr-2\"></i> Azure Governance", "<i class=\"fa-solid fa-headset text-accent mr-2\"></i> Technical Support"]
+            },
+            Q2: { 
+                primary: '#0078D4', accent: '#FFDE21', bg: '#030508', radius: '24px', pAlpha: '#0078D440', aAlpha: '#FFDE2140', font: "'Space Grotesk', sans-serif",
+                seoTitle: "Dhruv Soni | Cloud Automation & AI-Ready Engineer",
+                seoDesc: "Portfolio of Dhruv Soni. Bridging cloud systems with AI via PowerShell automation, Azure AI Fundamentals (AI-900), and Prompt Engineering.",
+                seoKeys: "Dhruv Soni, Cloud Automation, AI-Ready Infrastructure, PowerShell Scripting, AI-900, Prompt Engineering, Azure AI Fundamentals, IndiaAI, Cloud Optimization, Ahmedabad",
+                heroLabel: "Automating Cloud Systems",
+                heroTitle: "Automating the <br><span class=\"text-gradient\">Future.</span>",
+                heroSub: "I am Dhruv Soni. I combine <strong class=\"text-white\">Azure & PowerShell Automation</strong> with foundational AI (<strong class=\"text-accent\">AI-900, IndiaAI</strong>) to eliminate manual effort and optimize cloud performance.",
+                skillTitle: "<i class=\"fa-solid fa-microchip text-accent mr-3\"></i> Automation & AI",
+                dynSkills: ["<i class=\"fa-solid fa-terminal text-accent mr-2\"></i> PowerShell Scripting", "<i class=\"fa-solid fa-robot text-accent mr-2\"></i> Prompt Engineering", "<i class=\"fa-solid fa-brain text-accent mr-2\"></i> AI Fundamentals", "<i class=\"fa-solid fa-gears text-accent mr-2\"></i> Workflow Automation"]
+            },
+            Q3: { 
+                primary: '#10B981', accent: '#FFFFFF', bg: '#020617', radius: '8px', pAlpha: '#10B98140', aAlpha: '#FFFFFF40', font: "'Space Grotesk', sans-serif",
+                seoTitle: "Dhruv Soni | Multi-Cloud & DevOps Support",
+                seoDesc: "Portfolio of Dhruv Soni. Multi-Cloud professional navigating Azure, AWS, GCP, and Oracle Cloud, certified in AWS DevOps (CodePipeline, Jenkins).",
+                seoKeys: "Dhruv Soni, Multi-Cloud Engineer, AWS DevOps, CodePipeline, Jenkins, Oracle Cloud Infrastructure, OCI, Azure, GCP, Cross-Platform Cloud Support, Ahmedabad",
+                heroLabel: "Orchestrating Multi-Cloud",
+                heroTitle: "Unifying the <br><span class=\"text-gradient\">Ecosystem.</span>",
+                heroSub: "I am Dhruv Soni. Certified in <strong class=\"text-white\">Oracle Cloud & AWS DevOps</strong>, I navigate complex Multi-Cloud architectures (Azure, AWS, GCP) to deliver scalable, cross-platform technical solutions.",
+                skillTitle: "<i class=\"fa-solid fa-server text-accent mr-3\"></i> DevOps & Multi-Cloud",
+                dynSkills: ["<i class=\"fa-brands fa-aws text-accent mr-2\"></i> Multi-Cloud (Azure/AWS/GCP)", "<i class=\"fa-brands fa-docker text-accent mr-2\"></i> AWS DevOps (Jenkins)", "<i class=\"fa-solid fa-database text-accent mr-2\"></i> Oracle Cloud (OCI)", "<i class=\"fa-solid fa-infinity text-accent mr-2\"></i> CI/CD Basics"]
+            },
+            Q4: { 
+                primary: '#F97316', accent: '#EF4444', bg: '#0a0505', radius: '32px', pAlpha: '#F9731640', aAlpha: '#EF444440', font: "'Inter', sans-serif",
+                seoTitle: "Dhruv Soni | Cloud Reliability & Data Ops",
+                seoDesc: "Portfolio of Dhruv Soni. Ensuring high-availability cloud systems backed by rigorous QA/QC experience, Data Analytics, and Python automation.",
+                seoKeys: "Dhruv Soni, Cloud Reliability Engineer, System QA, Python Data Operations, Data Warehousing, Data Mining, Cloud Troubleshooting, Technical Support, Ahmedabad",
+                heroLabel: "Ensuring Cloud Reliability",
+                heroTitle: "Scaling with <br><span class=\"text-gradient\">Precision.</span>",
+                heroSub: "I am Dhruv Soni. Leveraging my QA/QC and Data Analytics background, I ensure <strong class=\"text-white\">High-Availability Cloud Systems</strong> through rigorous testing, Python scripting, and data-driven troubleshooting.",
+                skillTitle: "<i class=\"fa-solid fa-chart-line text-accent mr-3\"></i> Reliability & Data Ops",
+                dynSkills: ["<i class=\"fa-brands fa-python text-accent mr-2\"></i> Python Scripting", "<i class=\"fa-solid fa-vial-circle-check text-accent mr-2\"></i> System QA/QC", "<i class=\"fa-solid fa-database text-accent mr-2\"></i> Data Warehousing", "<i class=\"fa-solid fa-wrench text-accent mr-2\"></i> Tech Troubleshooting"]
+            }
+        };
+
+        const currentMonth = new Date().getMonth();
+        const currentQuarter = Math.floor(currentMonth / 3) + 1; 
+        const activeTheme = themes['Q' + currentQuarter];
+
+        const root = document.documentElement;
+        root.style.setProperty('--c-primary', activeTheme.primary);
+        root.style.setProperty('--c-accent', activeTheme.accent);
+        root.style.setProperty('--c-bg', activeTheme.bg);
+        root.style.setProperty('--card-radius', activeTheme.radius);
+        root.style.setProperty('--fog-primary', activeTheme.pAlpha);
+        root.style.setProperty('--fog-accent', activeTheme.aAlpha);
+        root.style.setProperty('--font-display', activeTheme.font);
+        
+        window.THEME_COLORS = { primary: activeTheme.primary, accent: activeTheme.accent, white: '#FFFFFF' };
+        document.title = activeTheme.seoTitle;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const metaDesc = document.getElementById('meta-desc');
+            if (metaDesc) metaDesc.setAttribute('content', activeTheme.seoDesc);
+            
+            const metaKeys = document.getElementById('meta-keys');
+            if (metaKeys) metaKeys.setAttribute('content', activeTheme.seoKeys);
+            
+            const metaOgDesc = document.getElementById('meta-og-desc');
+            if (metaOgDesc) metaOgDesc.setAttribute('content', activeTheme.seoDesc);
+
+            const elHeroLabel = document.getElementById('dyn-hero-label');
+            if (elHeroLabel) elHeroLabel.innerHTML = `<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> ${activeTheme.heroLabel}`;
+            
+            const elHeroTitle = document.getElementById('dyn-hero-title');
+            if (elHeroTitle) elHeroTitle.innerHTML = activeTheme.heroTitle;
+            
+            const elHeroSub = document.getElementById('dyn-hero-sub');
+            if (elHeroSub) elHeroSub.innerHTML = activeTheme.heroSub;
+            
+            const elSkillTitle = document.getElementById('dyn-skill-title');
+            if (elSkillTitle) elSkillTitle.innerHTML = activeTheme.skillTitle;
+            
+            const elSkill1 = document.getElementById('dyn-skill-1');
+            if (elSkill1) elSkill1.innerHTML = activeTheme.dynSkills[0];
+            
+            const elSkill2 = document.getElementById('dyn-skill-2');
+            if (elSkill2) elSkill2.innerHTML = activeTheme.dynSkills[1];
+            
+            const elSkill3 = document.getElementById('dyn-skill-3');
+            if (elSkill3) elSkill3.innerHTML = activeTheme.dynSkills[2];
+            
+            const elSkill4 = document.getElementById('dyn-skill-4');
+            if (elSkill4) elSkill4.innerHTML = activeTheme.dynSkills[3];
+        });
+    </script>
+</head>
+<body class="antialiased selection:bg-gray-800 selection:text-white">
+
+    <!-- Cinematic Fog Layers -->
+    <div class="fog-container">
+        <div class="fog-cloud fog-top"></div>
+        <div class="fog-cloud fog-bottom"></div>
+        <div class="fog-cloud fog-left"></div>
+        <div class="fog-cloud fog-right"></div>
+    </div>
+
+    <!-- Deep 3D Background Layer -->
+    <div id="bg-canvas-container"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full glass-nav transition-all duration-300">
+        <div class="py-3 px-6 md:px-12 flex justify-between items-center container mx-auto max-w-7xl">
+            <!-- Logo with dhruvsoni.jpg and Creative Font -->
+            <a href="#" class="flex items-center gap-4 group">
+                <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary transition-colors duration-300 shadow-[0_0_15px_var(--fog-primary)] group-hover:shadow-[0_0_20px_var(--fog-accent)]">
+                    <img src="./dhruvsoni.jpg" alt="Dhruv Soni" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Dhruv+Soni&background=0078D4&color=fff&size=128';" class="w-full h-full object-cover object-top">
+                </div>
+                <span class="text-3xl tracking-wider text-white logo-font">DS<span class="text-accent">.</span></span>
+            </a>
+            
+            <div class="hidden md:flex space-x-8 text-sm font-medium items-center">
+                <a href="#about" class="text-gray-300 hover:text-white transition-colors">Vision</a>
+                <a href="#experience" class="text-gray-300 hover:text-white transition-colors">Trajectory</a>
+                <a href="#certifications" class="text-gray-300 hover:text-white transition-colors">Credentials</a>
+                <a href="https://www.linkedin.com/in/dhruv-soni-035ba51b4?" target="_blank" class="px-6 py-2.5 rounded-full bg-white text-black font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    <i class="fa-brands fa-linkedin text-blue-600 mr-1"></i> Connect
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden bg-[#030508]/95 backdrop-blur-xl border-b border-gray-800">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-center">
+                <a href="#about" class="text-gray-300 mobile-link">Vision</a>
+                <a href="#experience" class="text-gray-300 mobile-link">Trajectory</a>
+                <a href="#certifications" class="text-gray-300 mobile-link">Credentials</a>
+                <a href="https://www.linkedin.com/in/dhruv-soni-035ba51b4?" target="_blank" class="text-accent font-bold mobile-link">LinkedIn Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 container mx-auto px-6 md:px-12 pt-32 pb-24 max-w-7xl">
+        
+        <!-- ================= HERO SECTION ================= -->
+        <header id="about" class="min-h-[85vh] grid grid-cols-1 lg:grid-cols-2 items-center gap-12 pt-10 reveal">
+            
+            <div class="flex flex-col justify-center items-start text-center lg:text-left">
+                <div id="dyn-hero-label" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/40 border border-gray-700/50 text-gray-300 text-xs font-bold mb-6 tracking-widest uppercase backdrop-blur-md mx-auto lg:mx-0">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Architecting AI-Ready Cloud
+                </div>
+                
+                <h1 id="dyn-hero-title" class="text-5xl md:text-7xl font-bold text-white mb-4 leading-tight w-full">
+                    Engineering the <br>
+                    <span class="text-gradient">AI Era.</span>
+                </h1>
+                
+                <p id="dyn-hero-sub" class="text-gray-300 text-lg md:text-xl leading-relaxed mb-10 font-light max-w-lg drop-shadow-md mx-auto lg:mx-0">
+                    I am Dhruv Soni. I fuse traditional <strong class="text-white">Azure Infrastructure</strong> with cutting-edge <strong class="text-accent">Generative AI workflows & AIOps</strong> to build autonomous, secure, and scalable systems for the future.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5 w-full justify-center lg:justify-start">
+                    <a href="https://www.linkedin.com/in/dhruv-soni-035ba51b4?" target="_blank" class="px-8 py-4 rounded-xl bg-primary text-white font-bold hover:brightness-110 transition-all shadow-[0_0_20px_var(--fog-primary)] flex items-center justify-center group" style="border-radius: var(--card-radius);">
+                        LinkedIn Connect <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Volumetric Cloud Area -->
+            <div class="relative w-full flex justify-center items-center mt-10 lg:mt-0">
+                <div class="absolute w-64 h-64 bg-primary rounded-full blur-[100px] opacity-20"></div>
+                <div id="hero-3d-container"></div>
+            </div>
+        </header>
+
+        <!-- ================= 3D CERTIFICATIONS CAROUSEL ================= -->
+        <section id="certifications" class="py-24 scroll-mt-20 reveal">
+            <h2 class="text-4xl font-bold mb-12 text-white text-center brand-font">
+                Validated <span class="text-accent">Expertise</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cert Cards -->
+                <div class="glass-card p-6 border-t-2 border-primary cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-associate-badge.svg" alt="AZ-104" class="w-20 h-20 mb-4 drop-shadow-[0_0_15px_var(--fog-primary)]">
+                        <h3 class="text-lg font-bold text-white mb-1">AZ-104</h3>
+                        <p class="text-gray-400 text-xs font-medium">Azure Administrator</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-accent cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="AI-900" class="w-20 h-20 mb-4 drop-shadow-[0_0_15px_var(--fog-accent)]">
+                        <h3 class="text-lg font-bold text-white mb-1">AI-900</h3>
+                        <p class="text-accent text-xs font-medium">Azure AI Fundamentals</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-primary cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <img src="https://learn.microsoft.com/en-us/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg" alt="AZ-900" class="w-20 h-20 mb-4 drop-shadow-[0_0_15px_var(--fog-primary)]">
+                        <h3 class="text-lg font-bold text-white mb-1">AZ-900</h3>
+                        <p class="text-gray-400 text-xs font-medium">Azure Fundamentals</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-red-500 cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-red-500/10 flex items-center justify-center mb-4 border border-red-500/30">
+                            <i class="fa-solid fa-cloud text-4xl text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.6)]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">OCI Certified</h3>
+                        <p class="text-red-400 text-xs font-medium">Oracle Cloud Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-orange-400 cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 border border-orange-500/30">
+                            <i class="fa-solid fa-brain text-4xl text-orange-400 drop-shadow-[0_0_10px_rgba(251,146,60,0.6)]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Yuva AI For All</h3>
+                        <p class="text-orange-300 text-xs font-medium">IndiaAI</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-[#FF9900] cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-[#FF9900]/10 flex items-center justify-center mb-4 border border-[#FF9900]/30">
+                            <i class="fa-brands fa-aws text-4xl text-[#FF9900] drop-shadow-[0_0_10px_rgba(255,153,0,0.6)]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">AWS DevOps</h3>
+                        <p class="text-[#FF9900] text-xs font-medium">CodePipeline & Jenkins</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 border-t-2 border-blue-400 cursor-pointer" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 border border-blue-500/30">
+                            <i class="fa-brands fa-python text-4xl text-blue-400 drop-shadow-[0_0_10px_rgba(96,165,250,0.6)]"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Python Data Ops</h3>
+                        <p class="text-blue-300 text-xs font-medium">Automation Basics</p>
+                    </div>
+                </div>
+
+                <a href="https://www.linkedin.com/in/dhruv-soni-035ba51b4?" target="_blank" class="glass-card p-6 border-t-2 border-primary flex flex-col justify-center items-center cursor-pointer group" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.05">
+                    <div class="inner-3d flex flex-col items-center text-center">
+                        <div class="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/40 transition-colors">
+                            <i class="fa-brands fa-linkedin-in text-4xl text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">Sync Profile</h3>
+                        <p class="text-gray-400 text-xs font-light">Full Network on LinkedIn</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE & SKILLS ================= -->
+        <section id="experience" class="py-24 scroll-mt-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Experience -->
+                <div class="reveal">
+                    <h2 class="text-4xl font-bold mb-10 text-white brand-font text-center lg:text-left">Trajectory</h2>
+                    <div class="space-y-6">
+                        
+                        <div class="glass-card p-6 md:p-8" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+                            <div class="inner-3d">
+                                <div class="flex flex-col md:flex-row justify-between md:items-start mb-4 gap-2">
+                                    <div>
+                                        <h3 class="text-xl md:text-2xl font-bold text-white">Associate Cloud & System Engineer</h3>
+                                        <p class="text-accent font-medium">MindQuad Solutions</p>
+                                    </div>
+                                    <span class="text-xs font-mono text-white bg-primary/20 px-3 py-1 rounded-full border border-primary/30 whitespace-nowrap self-start">2024 - PRESENT</span>
+                                </div>
+                                <p class="text-gray-300 text-sm leading-relaxed">
+                                    Architecting AI-ready infrastructure. Managing robust Office 365 environments, enforcing Zero-Trust via RBAC, and designing high-efficiency PowerShell automation scripts to eliminate operational latency.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 md:p-8 opacity-95" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+                            <div class="inner-3d">
+                                <h3 class="text-lg md:text-xl font-bold text-white">QA/QC Engineer</h3>
+                                <p class="text-gray-400 font-medium mb-3">BarodaWeb (Jan - Mar 2024)</p>
+                                <p class="text-gray-400 text-sm">Executed meticulous system & UI/UX test lifecycles, ensuring cross-platform stability and product resilience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-card p-6 md:p-8 opacity-95" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+                            <div class="inner-3d">
+                                <h3 class="text-lg md:text-xl font-bold text-white">Data Analyst</h3>
+                                <p class="text-gray-400 font-medium mb-3">Tacttree LLC (Jul - Aug 2023)</p>
+                                <p class="text-gray-400 text-sm">Spearheaded data mining and warehousing operations, laying the groundwork for intelligent data analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next-Gen Tech Stack -->
+                <div class="reveal delay-100">
+                    <h2 class="text-4xl font-bold mb-10 text-white brand-font text-center lg:text-left">Arsenal</h2>
+                    
+                    <div class="glass-card p-6 md:p-8 mb-8" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="inner-3d">
+                            <h3 id="dyn-skill-title" class="text-lg md:text-xl font-semibold text-white mb-6 flex items-center border-b border-gray-700/50 pb-3">
+                                <i class="fa-solid fa-microchip text-accent mr-3"></i> AIOps & Innovation
+                            </h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-medium">
+                                <div id="dyn-skill-1" class="bg-gray-900/60 p-4 rounded-xl border border-gray-700 text-gray-200"><i class="fa-solid fa-robot text-accent mr-2"></i> Prompt Engineering</div>
+                                <div id="dyn-skill-2" class="bg-gray-900/60 p-4 rounded-xl border border-gray-700 text-gray-200"><i class="fa-solid fa-network-wired text-accent mr-2"></i> AI-Assisted Workflows</div>
+                                <div id="dyn-skill-3" class="bg-gray-900/60 p-4 rounded-xl border border-gray-700 text-gray-200"><i class="fa-solid fa-code-branch text-accent mr-2"></i> Gen-AI Content</div>
+                                <div id="dyn-skill-4" class="bg-gray-900/60 p-4 rounded-xl border border-gray-700 text-gray-200"><i class="fa-solid fa-bolt text-accent mr-2"></i> Future-Tech Adoption</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 md:p-8" data-tilt data-tilt-max="3" data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="inner-3d">
+                            <h3 class="text-lg md:text-xl font-semibold text-white mb-6 flex items-center border-b border-gray-700/50 pb-3">
+                                <i class="fa-solid fa-cloud text-primary mr-3"></i> Cloud Architecture
+                            </h3>
+                            <div class="flex flex-wrap gap-2 md:gap-3">
+                                <span class="px-3 md:px-4 py-2 bg-primary/20 text-white border border-primary/50 rounded-lg text-xs md:text-sm shadow-md">Azure Multi-Cloud</span>
+                                <span class="px-3 md:px-4 py-2 bg-gray-800 text-gray-200 border border-gray-600 rounded-lg text-xs md:text-sm">PowerShell Automation</span>
+                                <span class="px-3 md:px-4 py-2 bg-gray-800 text-gray-200 border border-gray-600 rounded-lg text-xs md:text-sm">AWS & DevOps Pipeline</span>
+                                <span class="px-3 md:px-4 py-2 bg-gray-800 text-gray-200 border border-gray-600 rounded-lg text-xs md:text-sm">GCP & Oracle Cloud</span>
+                                <span class="px-3 md:px-4 py-2 bg-gray-800 text-gray-200 border border-gray-600 rounded-lg text-xs md:text-sm">Python Scripting</span>
+                                <span class="px-3 md:px-4 py-2 bg-gray-800 text-gray-200 border border-gray-600 rounded-lg text-xs md:text-sm">Zero-Trust / RBAC</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT SECTION ================= -->
+        <section id="contact" class="py-32 text-center scroll-mt-20 reveal">
+            <h2 class="text-4xl md:text-7xl font-bold mb-6 text-white brand-font">Establish <span class="text-primary">Connection</span></h2>
+            <p class="max-w-xl mx-auto text-gray-300 mb-12 text-sm md:text-lg font-light drop-shadow-md px-4">
+                Deploying infrastructure, securing networks, or integrating AI workflows? Open a secure channel via LinkedIn or Email.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16 relative z-20 px-4">
+                <a href="https://www.linkedin.com/in/dhruv-soni-035ba51b4?" target="_blank" class="glass-card px-6 md:px-10 py-5 flex items-center gap-4 hover:border-primary transition-all group w-full sm:w-auto cursor-pointer" data-tilt data-tilt-scale="1.05">
+                    <div class="inner-3d flex items-center pointer-events-none">
+                        <i class="fa-brands fa-linkedin text-3xl text-primary group-hover:scale-110 transition-transform mr-3"></i>
+                        <div class="text-left">
+                            <p class="text-xs md:text-sm text-gray-300">Sync Data</p>
+                            <p class="text-white font-bold text-base md:text-lg">LinkedIn Profile</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="mailto:connectwithdhruvsoni@gmail.com" class="glass-card px-6 md:px-10 py-5 flex items-center gap-4 hover:border-accent transition-all group w-full sm:w-auto cursor-pointer" data-tilt data-tilt-scale="1.05">
+                    <div class="inner-3d flex items-center pointer-events-none">
+                        <i class="fa-solid fa-envelope text-3xl text-accent group-hover:scale-110 transition-transform mr-3"></i>
+                        <div class="text-left">
+                            <p class="text-xs md:text-sm text-gray-300">Transmit Message</p>
+                            <p class="text-white font-bold text-base md:text-lg truncate max-w-[200px] md:max-w-none">connectwithdhruvsoni@gmail.com</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-xs md:text-sm text-gray-400 border-t border-gray-800/50 relative z-10 bg-[#030508]/60 backdrop-blur-md">
+        <p>Architected by AI & Dhruv Soni &copy; <span id="dynYear">2026</span> | Autonomous Quarterly Engine Active</p>
+    </footer>
+
+    <!-- ================= ADVANCED 3D SCRIPTS & THEME ENGINE ================= -->
+    <script>
+        // Mobile menu toggle logic
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        if(btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('open');
+            });
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('open');
+                });
+            });
+        }
+
+        window.onload = function() {
+            const dynYearEl = document.getElementById('dynYear');
+            if (dynYearEl) dynYearEl.textContent = new Date().getFullYear();
+
+            // 1. SCROLL REVEAL & FOG ENGINE
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); }});
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            const fogClouds = document.querySelectorAll('.fog-cloud');
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                fogClouds.forEach(cloud => cloud.classList.add('scrolling'));
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => { fogClouds.forEach(cloud => cloud.classList.remove('scrolling')); }, 600); 
+            });
+
+            // Disable VanillaTilt on mobile devices for better performance
+            if (window.innerWidth <= 768) {
+                const tiltElements = document.querySelectorAll('[data-tilt]');
+                tiltElements.forEach(el => {
+                    if(el.vanillaTilt) el.vanillaTilt.destroy();
+                });
+            }
+
+            // ================= THREE.JS USING DYNAMIC THEME COLORS =================
+            const tPrimary = new THREE.Color(window.THEME_COLORS ? window.THEME_COLORS.primary : '#0078D4');
+            const tAccent = new THREE.Color(window.THEME_COLORS ? window.THEME_COLORS.accent : '#FFDE21');
+            const tWhite = new THREE.Color(window.THEME_COLORS ? window.THEME_COLORS.white : '#FFFFFF');
+
+            // --- BG NEURAL NETWORK ---
+            const bgContainer = document.getElementById('bg-canvas-container');
+            if (!bgContainer) return; 
+
+            const bgScene = new THREE.Scene();
+            bgScene.fog = new THREE.FogExp2(0x030508, 0.001);
+            const bgCamera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            bgCamera.position.z = 250;
+            const bgRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: false }); 
+            bgRenderer.setSize(window.innerWidth, window.innerHeight);
+            bgContainer.appendChild(bgRenderer.domElement);
+
+            const pCount = window.innerWidth > 768 ? 120 : 60; // Less particles on mobile
+            const pPos = new Float32Array(pCount * 3);
+            const pVels = [];
+            for(let i=0; i<pCount; i++) {
+                pPos[i*3] = (Math.random() - 0.5) * 800; pPos[i*3+1] = (Math.random() - 0.5) * 800; pPos[i*3+2] = (Math.random() - 0.5) * 400;
+                pVels.push({ x: (Math.random()-0.5)*0.2, y: (Math.random()-0.5)*0.2, z: (Math.random()-0.5)*0.2 });
+            }
+            const pGeo = new THREE.BufferGeometry();
+            pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+            const pMat = new THREE.PointsMaterial({ color: tPrimary, size: 3, transparent: true, opacity: 0.5 });
+            const pMesh = new THREE.Points(pGeo, pMat);
+            bgScene.add(pMesh);
+
+            const lGeo = new THREE.BufferGeometry();
+            const lMat = new THREE.LineBasicMaterial({ color: tAccent, transparent: true, opacity: 0.08 });
+            const lMesh = new THREE.LineSegments(lGeo, lMat);
+            bgScene.add(lMesh);
+
+            // --- VOLUMETRIC DATA CLOUD ---
+            const heroContainer = document.getElementById('hero-3d-container');
+            if (!heroContainer) return; 
+            
+            const heroScene = new THREE.Scene();
+            const heroCamera = new THREE.PerspectiveCamera(45, heroContainer.clientWidth / heroContainer.clientHeight, 0.1, 1000);
+            heroCamera.position.z = 45;
+            const heroRenderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            heroRenderer.setSize(heroContainer.clientWidth, heroContainer.clientHeight);
+            heroContainer.appendChild(heroRenderer.domElement);
+
+            const cloudParticles = new THREE.BufferGeometry();
+            const cloudCount = window.innerWidth > 768 ? 1500 : 800; // Less particles on mobile
+            const cloudPos = new Float32Array(cloudCount * 3);
+            const cloudColors = new Float32Array(cloudCount * 3);
+            const cloudVels = []; 
+
+            for(let i = 0; i < cloudCount; i++) {
+                const u = Math.random(), v = Math.random();
+                const theta = u * 2.0 * Math.PI, phi = Math.acos(2.0 * v - 1.0);
+                const r = Math.cbrt(Math.random()) * 18; 
+                cloudPos[i*3] = r * Math.sin(phi) * Math.cos(theta);
+                cloudPos[i*3+1] = (r * Math.sin(phi) * Math.sin(theta)) * 0.6; 
+                cloudPos[i*3+2] = r * Math.cos(phi);
+                cloudVels.push({ x: (Math.random() - 0.5) * 0.02, y: (Math.random() - 0.5) * 0.02, z: (Math.random() - 0.5) * 0.02 });
+
+                const rand = Math.random();
+                let c = tPrimary;
+                if(rand > 0.75) c = tAccent;
+                else if(rand > 0.55) c = tWhite;
+
+                cloudColors[i*3] = c.r; cloudColors[i*3+1] = c.g; cloudColors[i*3+2] = c.b;
+            }
+
+            cloudParticles.setAttribute('position', new THREE.BufferAttribute(cloudPos, 3));
+            cloudParticles.setAttribute('color', new THREE.BufferAttribute(cloudColors, 3));
+
+            const cCanvas = document.createElement('canvas');
+            cCanvas.width = 32; cCanvas.height = 32;
+            const cCtx = cCanvas.getContext('2d');
+            const grad = cCtx.createRadialGradient(16, 16, 0, 16, 16, 16);
+            grad.addColorStop(0, 'rgba(255,255,255,1)'); grad.addColorStop(1, 'rgba(255,255,255,0)');
+            cCtx.fillStyle = grad; cCtx.fillRect(0,0,32,32);
+            
+            const cloudMaterial = new THREE.PointsMaterial({ size: 1.2, map: new THREE.CanvasTexture(cCanvas), transparent: true, opacity: 0.9, vertexColors: true, blending: THREE.AdditiveBlending, depthWrite: false });
+            const heroCloud = new THREE.Points(cloudParticles, cloudMaterial);
+            heroScene.add(heroCloud);
+
+            // --- ANIMATION LOOP ---
+            let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
+            const windowHalfX = window.innerWidth / 2, windowHalfY = window.innerHeight / 2;
+            
+            document.addEventListener('mousemove', (e) => { mouseX = (e.clientX - windowHalfX) * 0.001; mouseY = (e.clientY - windowHalfY) * 0.001; });
+            document.addEventListener('touchmove', (e) => { if(e.touches.length > 0) { mouseX = (e.touches[0].clientX - windowHalfX) * 0.001; mouseY = (e.touches[0].clientY - windowHalfY) * 0.001; } });
+
+            const clock = new THREE.Clock();
+            function animate() {
+                requestAnimationFrame(animate);
+                const time = clock.getElapsedTime();
+                targetX = mouseX; targetY = mouseY;
+
+                // BG Anim
+                bgCamera.position.x += (targetX * 50 - bgCamera.position.x) * 0.02;
+                bgCamera.position.y += (-targetY * 50 - bgCamera.position.y) * 0.02;
+                bgCamera.lookAt(bgScene.position);
+                
+                const positions = pMesh.geometry.attributes.position.array;
+                const linePositions = [];
+                for(let i=0; i<pCount; i++) {
+                    positions[i*3] += pVels[i].x; positions[i*3+1] += pVels[i].y; positions[i*3+2] += pVels[i].z;
+                    if(Math.abs(positions[i*3]) > 400) pVels[i].x *= -1; if(Math.abs(positions[i*3+1]) > 400) pVels[i].y *= -1; if(Math.abs(positions[i*3+2]) > 200) pVels[i].z *= -1;
+                    for(let j=i+1; j<pCount; j++) {
+                        const dx = positions[i*3] - positions[j*3], dy = positions[i*3+1] - positions[j*3+1], dz = positions[i*3+2] - positions[j*3+2];
+                        if(dx*dx + dy*dy + dz*dz < 4000) linePositions.push(positions[i*3], positions[i*3+1], positions[i*3+2], positions[j*3], positions[j*3+1], positions[j*3+2]);
+                    }
+                }
+                pMesh.geometry.attributes.position.needsUpdate = true;
+                lMesh.geometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+                bgScene.rotation.y = time * 0.05;
+                bgRenderer.render(bgScene, bgCamera);
+
+                // Cloud Anim
+                heroCloud.rotation.y = time * 0.15 + (targetX * 1.5);
+                heroCloud.rotation.x = time * 0.05 + (targetY * 1.5);
+                const hPos = heroCloud.geometry.attributes.position.array;
+                for(let i=0; i<cloudCount; i++) {
+                    hPos[i*3] += cloudVels[i].x; hPos[i*3+1] += cloudVels[i].y; hPos[i*3+2] += cloudVels[i].z;
+                    if(Math.abs(hPos[i*3]) > 22) cloudVels[i].x *= -1; if(Math.abs(hPos[i*3+1]) > 14) cloudVels[i].y *= -1; if(Math.abs(hPos[i*3+2]) > 22) cloudVels[i].z *= -1;
+                }
+                heroCloud.geometry.attributes.position.needsUpdate = true;
+                heroRenderer.render(heroScene, heroCamera);
+            }
+
+            window.addEventListener('resize', () => {
+                bgCamera.aspect = window.innerWidth / window.innerHeight; bgCamera.updateProjectionMatrix(); bgRenderer.setSize(window.innerWidth, window.innerHeight);
+                if (heroContainer) { heroCamera.aspect = heroContainer.clientWidth / heroContainer.clientHeight; heroCamera.updateProjectionMatrix(); heroRenderer.setSize(heroContainer.clientWidth, heroContainer.clientHeight); }
+            });
+
+            animate();
+        };
+    </script>
+</body>
+</html>
